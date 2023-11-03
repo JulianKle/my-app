@@ -1,37 +1,39 @@
-/* function generateEmail(user) {
-  const email = `${user.firstName}.${user.lastName}@gmail.com`;
-  return email;
+function generateEmail(user) {
+  const newEmail = `${user.firstName}.${user.lastName}@gmail.com`;
+  return newEmail;
 }
 
-const user = {
-  firstName: "Julian",
-  lastName: "Klett",
+const name1 = {
+  firstName: Julian,
+  lastName: Klett,
 };
 
-const generatedEmail = generateEmail(user);
-
-function getUserFromEmail() {
-  if (!generatedEmail.includes("@")) {
-    const returnValue1 = 0;
+function getUserFromEmail(email) {
+  if (!email.includes("@")) {
     console.log("Not an email adress");
-  } else if (generatedEmail.includes("@")) {
-    const split1 = generatedEmail.split("@");
+    return null;
+  } else if (email.includes("@")) {
+    const split1 = email.split("@");
     const firstEntry = split1[0];
     if (!firstEntry.includes(".")) {
-      const returnValue2 = 0;
       console.log("nodots@example.com");
+      return null;
     } else {
       const split2 = firstEntry.split(".");
-      const firstNameAfterSplit = split2[0];
-      const lastNameNameAfterSplit = split2[1];
-      console.log(firstNameAfterSplit, lastNameNameAfterSplit);
+
+      const userName = {
+        firstName: split2[0],
+        lastName: split2[1],
+      };
+      console.log(firstName, lastName);
     }
   }
 }
 
-getUserFromEmail(); */
+console.log(generateEmail(name1));
+console.log(getUserFromEmail(newEmail));
 
-function generateEmail(user) {
+/* function generateEmail(user) {
   const firstNameLowerCase = user.firstName.toLowerCase();
   const lastNameLowerCase = user.lastName.toLowerCase();
 
@@ -96,3 +98,4 @@ generateUserForm.addEventListener("submit", (event) => {
 
   userOutput.textContent = `${user.firstName} ${user.lastName}`;
 });
+*/
